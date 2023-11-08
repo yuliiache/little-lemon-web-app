@@ -1,11 +1,16 @@
 import logo from "./assets/images/Logo vertical.jpg";
-import React from "react";
+
 
 function Footer() {
+    const logoStyle ={
+        height: '85px'
+    }
+
     return (
-        <footer>
+        <footer className='footer'>
             <img className="logo"
              src={logo}
+             style={logoStyle}
              alt='little lemon logo'/>
 
             <h2>Doormat Navigation</h2>
