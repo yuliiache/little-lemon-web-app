@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import logo from "./assets/images/Logo.svg";
-import burger from "./assets/images/Burger menu.svg"
+import logo from "./assets/images/logo-main.svg";
+import { ReactComponent as menuBurger } from "./assets/images/icon-menu-burger.svg"
 import { NavLink} from "react-router-dom";
 
 function Nav () {
@@ -19,7 +19,8 @@ function Nav () {
                          alt='little lemon logo'/>
                 </div>
                 <div className='menu-icon' onClick={handleShowNav}>
-                    <img src={burger}/>
+                    <img src={menuBurger}
+                         alt='Menu icon'/>
                 </div>
                 <div className={`nav-elements ${showNav && 'active'}`}>
                     <ul className='nav_list'>
