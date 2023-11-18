@@ -7,7 +7,7 @@ function Footer() {
     }
 
     return (
-        <footer className='footer'>
+        <footer className='footer grid-span-8 '>
             <img className="logo"
              src={logo}
              style={logoStyle}

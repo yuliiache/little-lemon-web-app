@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import logo from "./assets/images/logo-main.svg";
-import { ReactComponent as menuBurger } from "./assets/images/icon-menu-burger.svg"
+import menuBurger from "./assets/images/icon-menu-burger.svg"
 import { NavLink} from "react-router-dom";
 
 function Nav () {
@@ -11,7 +11,7 @@ function Nav () {
     }
 
     return (
-        <nav className='nav'>
+        <nav className='nav grid-span-8'>
             <div className='nav-container'>
                 <div className='logo'>
                     <img
@@ -23,7 +23,7 @@ function Nav () {
                          alt='Menu icon'/>
                 </div>
                 <div className={`nav-elements ${showNav && 'active'}`}>
-                    <ul className='nav_list'>
+                    <ul>
                         <li>
                             <NavLink to="/">Home</NavLink>
                         </li>

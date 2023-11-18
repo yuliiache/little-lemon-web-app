@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
 :root {
   --ff-prm: 'Karla', sans-serif;
   --ff-sec: 'Markazi Text', serif;
@@ -28,14 +35,26 @@
   --br: 16px;
 }
 
-  body {
-    margin: 0;
-    font-family: 'Karla', sans-serif;
-    background: white;
-    color: #000000;
-    font-size: 1rem;
-    line-height: 1.563rem;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  background: white;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.563rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
