@@ -11,7 +11,7 @@ function Nav () {
     }
 
     return (
-        <nav className='nav grid-span-8'>
+        <nav className='nav'>
             <div className='nav-container'>
                 <div className='logo'>
                     <img

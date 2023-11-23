@@ -18,7 +18,8 @@ function Home() {
     );
     return(
         <main className='homepage'>
-            <section className='hero'>
+            <div className='hero'>
+                <div className='hero-background'></div>
                 <div className='hero-content'>
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
@@ -30,11 +31,15 @@ function Home() {
                          src={hero}
                          alt='assortment of bruschettas on a plate held by a waiter'/>
                 </div>
-            </section>
+            </div>
             <section className='specials'>
                 <h1>Specials</h1>
                 <button>Online Menu</button>
-                {specialItems}
+                <div className='slider'>
+                    <div className='card-holder'>
+                        <div className='card'>{specialItems}</div>
+                    </div>
+                </div>
             </section>
             <section className='testimonials'>
                 <h1>Testimonials</h1>
@@ -48,7 +53,10 @@ function Home() {
                     The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12-15 items that they rotate seasonally.
 
                     The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
-                <img src={decoLine}/>
+                <img
+                    src={decoLine}
+                    alt='yellow decorative line'
+                />
                 <div>
                     <img className='owners'
                          src={owners}

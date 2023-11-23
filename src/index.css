@@ -18,18 +18,18 @@
   --fw-bold: 700;
   --fw-exbold: 800;
 
-  --fs-t: 64px;
-  --fs-st: 40px;
-  --fs-c: 20px;
-  --fs-l: 18px;
-  --fs-p: 16px;
+  --fs-title: 64px;
+  --fs-subtitle: 40px;
+  --fs-section-title: 20px;
+  --fs-lead: 18px;
+  --fs-paragraph: 16px;
 
   --primary-clr: #495E57;
   --secondary-clr: #F4CE14;
   --accent-clr: #EE9972;
   --accent-light: #FBDABB;
-  --clr-light: #EDEFEE;
-  --clr-dark: #333333;
+  --light-clr: #EDEFEE;
+  --dark-clr: #333333;
   --background-clr: #FFFFFF;
 
   --br: 16px;
@@ -53,6 +53,7 @@ img, picture, video, canvas, svg {
 
 input, button, textarea, select {
   font: inherit;
+  border: none;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
