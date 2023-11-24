@@ -9,9 +9,11 @@ function SpecialsCard({ image, title, price, description}) {
                 />
             </div>
             <div className='specials-content'>
-                <h3>{title}</h3>
-                <p className='price'>{price}</p>
-                <p className='description'>{description}</p>
+                <div className='header-row'>
+                    <h3>{title}</h3>
+                    <p>{price}</p>
+                </div>
+                <p>{description}</p>
                 <div className='specials-delivery'>
                     <p>Order a delivery</p>
                     <img src={iconDelivery} alt='delivery vespa icon'/>

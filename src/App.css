@@ -222,8 +222,8 @@
 
 .hero-image img {
     margin-left: auto;
-    max-width: 368px;
-    aspect-ratio: 1 / 1.165;
+    max-width: 397px;
+    aspect-ratio: 397 / 456;
     object-fit: cover;
     border-radius: var(--br);
 }
@@ -275,23 +275,8 @@
     font-family: var(--ff-sec);
     font-size: var(--fs-title);
     font-weight: var(--fw-med);
-}
-
-.slider {
-    grid-column: 3 / 11;
-    grid-row: 2;
-}
-
-.card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.specials-card {
-    width: 260px;
-    height: 418px;
+    line-height: normal;
+    padding: 18px;
 }
 
 .specials button {
@@ -313,8 +298,90 @@
 }
 .specials-image img {
     width: 100%;
-    aspect-ratio: 1.477;
+    aspect-ratio: 260 / 176;
     object-fit: cover;
-
+    z-index: 1;
 }
 
+.slider {
+    grid-column: 3 / 11;
+    grid-row: 2;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.specials-card {
+    width: 260px;
+    max-height: 418px;
+}
+
+.specials-image img {
+    border-radius: var(--br);
+}
+
+.specials-content {
+    height: 254px;
+    background-color: var(--light-clr);
+    font-family: var(--ff-prm);
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    margin-top: -12px;
+    position:relative;
+    z-index: 2;
+    padding: 22px 18px 19px 22px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: var(--fw-med);
+    margin-bottom: 5px;
+}
+
+.header-row h3 {
+    font-size: var(--fs-lead);
+}
+
+.header-row p {
+    font-size: var(--fs-paragraph);
+    color: var(--accent-clr);
+}
+
+.specials-content > p {
+    font-size: var(--fs-paragraph);
+    color: var(--dark-clr);
+    line-height: 25px;
+    font-weight: var(--fw-reg);
+    margin-right: 12px;
+}
+
+.specials-delivery {
+    display: flex;
+    font-weight: var(--fw-med);
+    margin-top: auto;
+}
+
+.specials-delivery p {
+    font-size: var(--fs-paragraph);
+    margin-right: 6px;
+}
+
+@media (max-width: 1199px) {
+    .specials h1 {
+        grid-column: 2 /7;
+    }
+
+    .specials button {
+        grid-column: 7 / 12;
+    }
+
+    .slider {
+        grid-column: 2 / 12;
+    }
+}
