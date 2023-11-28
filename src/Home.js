@@ -6,11 +6,30 @@ import TestimonialCard from "./TestimonialCard";
 import owners from "./assets/images/owners-about.jpg"
 import decoLine from "./assets/images/deco-line-about.png"
 import restaurantInside from "./assets/images/restaurant-inside.jpg"
-
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import {Pagination} from 'swiper/modules';
 
 function Home() {
+    const [isLargeDevice, setIsLargeDevice] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeDevice(window.innerWidth >= 980);
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const specialItems = specials.map(special =>
-        <SpecialsCard key={special.id} {...special} />
+        <SwiperSlide>
+            <SpecialsCard key={special.id} {...special} />
+        </SwiperSlide>
     );
 
     const testimonialItems = testimonials.map(testimonial =>
@@ -33,12 +52,28 @@ function Home() {
                 </div>
             </div>
             <section className='specials'>
-                <h1>Specials</h1>
-                <button>Online Menu</button>
-                <div className='slider'>
-                    <div className='card-holder'>
-                        <div className='card'>{specialItems}</div>
-                    </div>
+                <div className='specials-header'>
+                    <h1>Specials</h1>
+                    <button>Online Menu</button>
+                </div>
+                <div className='card-holder'>
+                    {isLargeDevice ? (
+                        specialItems
+                    ) : (
+                        <Swiper
+                            initialSlide={1}
+                            slidesPerView={'auto'}
+                            centeredSlides={true}
+                            spaceBetween={30}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            modules={[Pagination ]}
+                            className="mySwiper"
+                        >
+                            {specialItems}
+                        </Swiper>
+                    )}
                 </div>
             </section>
             <section className='testimonials'>
