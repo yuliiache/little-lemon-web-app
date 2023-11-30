@@ -30,7 +30,7 @@ export const testimonials = [{
     id: 3,
     starRating: fiveStar,
     avatar: avatar4,
-    review:'“Highly recommend!A must-visit for any food lover in Chicago."',
+    review:'“Highly recommend! A must-visit for any food lover in Chicago."',
     name:'Andy Sanders',
     starAlt:'five star rating',
 }]

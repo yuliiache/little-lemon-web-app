@@ -27,8 +27,8 @@ function Home() {
     }, []);
 
     const specialItems = specials.map(special =>
-        <SwiperSlide>
-            <SpecialsCard key={special.id} {...special} />
+        <SwiperSlide key={special.id}>
+            <SpecialsCard {...special} />
         </SwiperSlide>
     );
 
@@ -78,7 +78,9 @@ function Home() {
             </section>
             <section className='testimonials'>
                 <h1>Testimonials</h1>
-                {testimonialItems}
+                <div className='testimonials-holder'>
+                    {testimonialItems}
+                </div>
             </section>
             <section className='about'>
                 <h1>Little Lemon</h1>

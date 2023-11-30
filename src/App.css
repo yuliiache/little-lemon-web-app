@@ -297,12 +297,11 @@
 .card-holder {
     grid-column: 3 / 11;
     grid-row: 2;
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-
+    margin-bottom: 73px;
 }
 
 .swiper-slide {
@@ -387,6 +386,7 @@
 @media (max-width: 980px) {
     .card-holder {
         overflow: auto;
+        grid-column: 1 / 13;
     }
 
     .specials-card {
@@ -406,5 +406,89 @@
 
     .specials-header button {
         display: none;
+    }
+}
+
+
+/*------------------------------------Testimonials------------------------------*/
+
+.testimonials {
+    background-color: var(--light-clr);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+}
+
+.testimonials h1 {
+    grid-column: 3 / 11;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    color: var(--dark-clr);
+    font-family: var(--ff-sec);
+    font-size: var(--fs-title);
+    font-weight: var(--fw-med);
+    line-height: normal;
+    padding: 109px 0 37px;
+}
+
+.testimonials-holder {
+    grid-column: 3 / 11;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 131px;
+}
+.testimonials-card {
+    width: 223px;
+    height: 183px;
+    background-color: var(--background-clr);
+    border-radius: var(--br);
+}
+
+.testimonials-rating img {
+    width: 76px;
+    height: 12px;
+    margin: 19px 129px 8px 18px;
+}
+
+.testimonials-avatar-review img {
+    width: 65px;
+    height: 80px;
+    margin: 0 18px;
+    object-fit: cover;
+    border-radius: var(--br);
+}
+
+.testimonials-avatar-review p {
+    width: 111px;
+    color: var(--dark-clr);
+    font-family: var(--ff-prm);
+    font-size: var(--fs-paragraph);
+    font-weight: var(--fw-reg);
+    line-height: 15px;
+    margin-top: 3px;
+}
+
+.testimonials-card > p {
+    font-family: var(--ff-prm);
+    font-size: var(--fs-paragraph);
+    font-weight: var(--fw-med);
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+@media (max-width: 1400px) {
+    .testimonials-holder {
+        grid-column: 2 / 12;
+    }
+}
+
+@media (max-width: 1199px) {
+    .testimonials-holder {
+        grid-column: 1 / 13;
     }
 }

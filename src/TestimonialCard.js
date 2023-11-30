@@ -1,21 +1,21 @@
 
 function TestimonialCard ({ starRating, avatar, review, name, starAlt}) {
     return (
-        <section>
-            <div>
+        <section className='testimonials-card'>
+            <div className='testimonials-rating'>
                 <img
                     src={starRating}
                     alt={starAlt}
                 />
             </div>
-            <div>
-                <img
-                    src={avatar}
-                    alt={`face of ${name}`}
-                />
+            <div className='testimonials-avatar-review' style={{display: 'flex'}}>
+                    <img
+                        src={avatar}
+                        alt={`face of ${name}`}
+                    />
+                <p>{review}</p>
             </div>
-            <p>{review}</p>
-            <h6>{name}</h6>
+            <p>{name}</p>
         </section>
     )
 }
