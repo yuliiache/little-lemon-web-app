@@ -1,5 +1,4 @@
 import './App.css';
-import Header from "./Header";
 import Nav from "./Nav";
 import Home from "./Home";
 import Footer from "./Footer";
@@ -12,7 +11,9 @@ function App() {
                 <Nav />
             </BrowserRouter>
             <Home />
-            <Footer />
+            <BrowserRouter>
+                <Footer />
+            </BrowserRouter>
         </div>
     );
 }
