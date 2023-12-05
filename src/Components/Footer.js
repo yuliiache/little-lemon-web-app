@@ -1,4 +1,4 @@
-import logo from "./assets/images/logo-vertical.png";
+import logo from "../assets/images/logo-vertical.png";
 import {NavLink} from "react-router-dom";
 import React from "react";
 

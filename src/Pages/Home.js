@@ -1,11 +1,11 @@
-import hero from './assets/images/hero.jpg'
-import { specials} from "./data/SpecialsData";
-import {testimonials} from "./data/TestimonialsData";
-import SpecialsCard from "./SpecialsCard";
-import TestimonialCard from "./TestimonialCard";
-import owners from "./assets/images/owners-about.jpg"
-import decoLine from "./assets/images/deco-line-about.png"
-import restaurantInside from "./assets/images/restaurant-inside.jpg"
+import hero from '../assets/images/hero.jpg'
+import { specials} from "../Data/SpecialsData";
+import {testimonials} from "../Data/TestimonialsData";
+import SpecialsCard from "../Components/SpecialsCard";
+import TestimonialCard from "../Components/TestimonialCard";
+import owners from "../assets/images/owners-about.jpg"
+import decoLine from "../assets/images/deco-line-about.png"
+import restaurantInside from "../assets/images/restaurant-inside.jpg"
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -38,7 +38,7 @@ function Home() {
         </SwiperSlide>
     );
     return(
-        <main className='homepage'>
+        <main className='main'>
             <div className='hero'>
                 <div className='hero-background'></div>
                 <div className='hero-content'>

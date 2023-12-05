@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import logo from "./assets/images/logo-main.svg";
-import menuBurger from "./assets/images/icon-menu-burger.svg"
+import logo from "../assets/images/logo-main.svg";
+import menuBurger from "../assets/images/icon-menu-burger.svg"
 import { NavLink} from "react-router-dom";
 
 function Nav () {
@@ -8,6 +8,10 @@ function Nav () {
 
     const handleShowNav = () => {
         setShowNav(!showNav)
+    }
+
+    const closeNav = () => {
+        setShowNav(false);
     }
 
     return (
@@ -25,22 +29,22 @@ function Nav () {
                 <div className={`nav-elements ${showNav && 'active'}`}>
                     <ul>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink onClick={closeNav} to="/">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about">About</NavLink>
+                            <NavLink onClick={closeNav} to="/about">About</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/menu">Menu</NavLink>
+                            <NavLink onClick={closeNav} to="/menu">Menu</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/reservation">Reservation</NavLink>
+                            <NavLink onClick={closeNav} to="/reservation">Reservation</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/orderonline">Order Online</NavLink>
+                            <NavLink onClick={closeNav} to="/orderonline">Order Online</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/login">Login</NavLink>
+                            <NavLink onClick={closeNav} to="/login">Login</NavLink>
                         </li>
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-import iconDelivery from './assets/images/icon-delivery.png'
+import iconDelivery from '../assets/images/icon-delivery.png'
 function SpecialsCard({ image, title, price, description}) {
     return (
             <section className='specials-card'>
