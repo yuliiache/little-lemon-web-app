@@ -8,7 +8,7 @@ function TestimonialCard ({ starRating, avatar, review, name, starAlt}) {
                     alt={starAlt}
                 />
             </div>
-            <div className='testimonials-avatar-review' style={{display: 'flex'}}>
+            <div className='testimonials-avatar-review'>
                     <img
                         src={avatar}
                         alt={`face of ${name}`}

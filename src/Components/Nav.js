@@ -18,9 +18,11 @@ function Nav () {
         <nav className='nav'>
             <div className='nav-container'>
                 <div className='logo'>
-                    <img
-                         src={logo}
-                         alt='little lemon logo'/>
+                    <NavLink onClick={closeNav} to="/">
+                        <img
+                            src={logo}
+                            alt='little lemon logo'/>
+                    </NavLink>
                 </div>
                 <div className='menu-icon' onClick={handleShowNav}>
                     <img src={menuBurger}

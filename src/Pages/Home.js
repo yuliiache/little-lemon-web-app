@@ -107,15 +107,20 @@ function Home() {
                 <div className='about-content'>
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
+
                     <p>Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant.<br />
                         <br/>
                         The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12-15 items that they rotate seasonally.<br />
                         <br/>
                         The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
-                    <img
-                        src={decoLine}
-                        alt='decorative yellow line'
-                    />
+                    <div className='v-line'></div>
+                    <div className='h-line'></div>
+                        {/*<img*/}
+                    {/*    src={decoLine}*/}
+                    {/*    alt='decorative yellow line'*/}
+                    {/*/>*/}
+
+
                 </div>
                 <div className='about-images'>
                     <div className='about-images-top'>

@@ -6,8 +6,9 @@ function Reservation() {
     const [chooseTable, setChooseTable] = useState({
         date: '',
         time: '',
-        guests: '',
+        guests: 1,
         occasion: '',
+        selectedLocation: null,
     })
     const [personalDetails, setPersonalDetails] = useState({
         name: '',
@@ -17,14 +18,7 @@ function Reservation() {
         terms: false,
     })
 
-    const handleTableChange = (e) => {
-        setChooseTable( {
-            ...chooseTable,
-            [e.target.id]: e.target.value,
-        });
-    }
-
-    const handleChange = (e) => {
+    const handlePersonalChange = (e) => {
         if (e.target.type === 'checkbox') {
             setPersonalDetails({
                 ...personalDetails,
@@ -33,34 +27,45 @@ function Reservation() {
         } else {
             setPersonalDetails({
                 ...personalDetails,
-                [e.target.id]: e.target.value,
+                [e.target.name]: e.target.value,
             });
         }
     }
 
+    const handleTableChange = (e) => {
+        setChooseTable( prevState => ({
+            ...prevState,
+            [e.target.id]: e.target.value,
+        }));
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(personalDetails.name);
+        alert(chooseTable.occasion)
 
         setChooseTable({
             date: '',
             time: '',
-            guests: '',
+            guests: 1,
             occasion: '',
+            selectedLocation: null,
         });
         setPersonalDetails({
             name: '',
             email: '',
             phone: '',
             comment: '',
+            terms: false,
         });
     };
 
     return (
         <main className="main">
             <form onSubmit={handleSubmit}>
-                <ChooseTable chooseTable={chooseTable} handleTableChange={handleTableChange}/>
-                <PersonalDetails personalDetails={personalDetails} handleChange={handleChange}/>
+                <ChooseTable
+                    chooseTable={chooseTable} handleTableChange={handleTableChange}
+                />
+                <PersonalDetails personalDetails={personalDetails} handlePersonalChange={handlePersonalChange}/>
                 <button disabled={!personalDetails.name} type='submit'>Submit</button>
 
             </form>

@@ -1,6 +1,6 @@
 
 
-function PersonalDetails({ personalDetails, handleChange }) {
+function PersonalDetails({ personalDetails, handlePersonalChange }) {
     return (
 
         <div className='personal-details'>
@@ -16,7 +16,7 @@ function PersonalDetails({ personalDetails, handleChange }) {
                     name='name'
                     autoComplete='name'
                     value={personalDetails.name}
-                    onChange={handleChange}
+                    onChange={handlePersonalChange}
                 />
             </div>
             <div>
@@ -28,11 +28,12 @@ function PersonalDetails({ personalDetails, handleChange }) {
                     name='email'
                     autoComplete='email'
                     value={personalDetails.email}
-                    onChange={handleChange}
+                    onChange={handlePersonalChange}
                 />
             </div>
             <div>
                 <label htmlFor='phone'>Contact Number</label>
+                <p>+1</p>
                 <input
                     id='phone'
                     type='tel'
@@ -40,29 +41,29 @@ function PersonalDetails({ personalDetails, handleChange }) {
                     name='phone'
                     autoComplete='tel'
                     value={personalDetails.phone}
-                    onChange={handleChange}
+                    onChange={handlePersonalChange}
                 />
             </div>
             <div>
                 <label htmlFor='comment'>Comment</label>
-                <input
+                <textarea
                     id='comment'
-                    type='text'
                     placeholder='Anything else about your booking?'
                     name='comment'
+                    rows='5'
                     maxLength='200'
                     value={personalDetails.comment}
-                    onChange={handleChange}
+                    onChange={handlePersonalChange}
                 />
                 <p>0/200 Characters</p>
             </div>
             <div>
                 <input
-                    type="checkbox"
-                    id="terms"
-                    name="terms"
+                    type='checkbox'
+                    name='terms'
+                    id='terms'
                     checked={personalDetails.terms}
-                    onChange={handleChange}
+                    onChange={handlePersonalChange}
                 />
                 <label htmlFor="terms">I agree to the Terms & Conditions</label>
             </div>
