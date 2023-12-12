@@ -57,7 +57,7 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                 />
                 <p>0/200 Characters</p>
             </div>
-            <div>
+            <div className='terms'>
                 <input
                     type='checkbox'
                     name='terms'

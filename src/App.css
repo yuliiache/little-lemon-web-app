@@ -21,7 +21,45 @@
         margin: auto;
     }
 }
-/* --------------------Navigation Bar-------------------------- */
+
+/*----------------------Button-----------------------------------*/
+.button {
+    width: 224px;
+    height: 55px;
+    border-radius: var(--br);
+    background-color: var(--secondary-clr);
+    color: var(--dark-clr);
+    font-family: var(--ff-prm);
+    font-size: var(--fs-section-title);
+    font-weight: var(--fw-exbold);
+    margin-top: 26px;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: var(--accent-clr);
+    color: var(--background-clr);
+}
+
+.button.choose-table {
+    width: 137px;
+    height: 68px;
+    background-color: var(--primary-clr);
+    color: var(--light-clr);
+    text-transform: uppercase;
+}
+
+.button.choose-table:hover {
+    background-color: var(--light-clr);
+    color: var(--dark-clr);
+}
+
+.button.choose-table.active {
+    background-color: var(--accent-clr);
+    color: var(--light-clr);
+}
+
+    /* --------------------Navigation Bar-------------------------- */
 
 .nav-container {
     max-width: 100%;
@@ -188,23 +226,6 @@
     margin-top: 9px;
 }
 
-.hero-content button {
-    width: 224px;
-    height: 55px;
-    border-radius: var(--br);
-    background-color: var(--secondary-clr);
-    color: var(--dark-clr);
-    font-family: var(--ff-prm);
-    font-size: var(--fs-section-title);
-    font-weight: var(--fw-exbold);
-    margin-top: 26px;
-}
-
-.hero-content button:active {
-    background-color: var(--accent-clr);
-    color: var(--background-clr);
-}
-
 .hero-image {
     grid-column: 7 / 11;
     grid-row: 2 / 11;
@@ -275,23 +296,6 @@
     font-weight: var(--fw-med);
     line-height: normal;
     padding: 18px 0;
-}
-
-.specials-header button {
-    margin: 29px 0 49px 0;
-    width: 224px;
-    height: 55px;
-    border-radius: var(--br);
-    background-color: var(--secondary-clr);
-    color: var(--dark-clr);
-    font-family: var(--ff-prm);
-    font-size: var(--fs-section-title);
-    font-weight: var(--fw-exbold);
-}
-
-.specials button:active {
-    background-color: var(--accent-clr);
-    color: var(--background-clr);
 }
 
 .specials-holder {
@@ -553,48 +557,13 @@
     color: var(--light-clr);
     font-family: var(--ff-prm);
     font-size: var(--fs-lead);
-    z-index: 1;
     max-width: 329px;
-    position: absolute;
-    /*font-weight: var(--fw-med);*/
-    /*border-left: 3px solid;*/
-    /*height: 75%;*/
-    /*border-color: var(--secondary-clr);*/
-    /*margin-right: -20px;*/
-    /*width: 329px;*/
-    /*margin-top: 27px;*/
-    /*position: relative;*/
-    /*z-index: 0;*/
+    margin-top: 27px;
 }
-/*.h-line {*/
-/*    border-bottom: 3px solid var(--secondary-clr);*/
-/*    margin: 16px 0 0 -20px;*/
-/*    max-width: 234px;*/
 
-/*}*/
-.v-line {
-    border-left: 3px solid var(--secondary-clr);
-    border-bottom: 3px solid var(--secondary-clr);
-    height: 233px;
-    max-width: 234px;
-    z-index: 0;
-    position: relative;
-    /*padding: -80px -20px 0 0;*/
-    /*margin-bottom: -16px;*/
+.about-content img {
+    margin: -217px 0 0 -20px;
 }
-/*.about-content p::before {*/
-/*    content: '';*/
-/*    position: absolute;*/
-
-/*    top: 50%;*/
-/*    width: 100%;*/
-/*    height: 3px;*/
-/*    background-color: var(--secondary-clr);*/
-/*    z-index: -1;*/
-/*}*/
-/*.about-content  {*/
-/*    margin: -217px 0 0 -20px;*/
-/*}*/
 
 .about-images {
     grid-column: 7 / 11;
@@ -606,14 +575,14 @@
 
 .about-images img {
     margin-left: auto;
-    max-width: 249px;
+    /*max-width: 249px;*/
     aspect-ratio: 249 / 345;
     object-fit: cover;
     border-radius: var(--br);
 }
 
 .about-images-top {
-    grid-column: 6 / 12;
+    grid-column: 6 / 13;
     grid-row: 1;
     z-index: 1;
 }
@@ -658,7 +627,7 @@
     }
 
     .about-content {
-        grid-column: 3 / 12;
+        grid-column: 3 / 11;
         margin: 50px 0;
     }
     .about-content p {
@@ -763,11 +732,61 @@
 
 /*---------------------Reservation-----------------------------*/
 
-.reservation {
+.main form {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
-    column-gap: 20px;
+    gap: 20px;
 }
 
+.form-background-top {
+    grid-column: 1 / 13;
+    grid-row: 1;
+    background-color: var(--primary-clr);
+}
 
+.form-top {
+    grid-column: 3 / 11;
+    grid-row: 1;
+    margin: 40px auto 70px auto;
+}
+
+.form-background-bottom {
+    grid-column: 1 / 13;
+    grid-row: 2;
+    background: var(--light-clr);
+    z-index: -1;
+}
+
+.form-bottom {
+    grid-column: 3 / 11;
+    grid-row: 2;
+    margin: 40px auto 185px auto;
+}
+
+.main form h1 {
+    font-family: var(--ff-sec);
+    font-size: var(--fs-title);
+    font-weight: var(--fw-med);
+}
+
+.choose-table h1 {
+    color: var(--secondary-clr);
+}
+
+.personal-details {
+    color: var(--dark-clr);
+}
+
+.main form label:not(:last-child) {
+    text-transform: uppercase;
+    font-family: var(--ff-sec);
+    font-size: var(--fs-subtitle);
+    font-weight: var(--fw-reg);
+}
+.terms label {
+    font-family: var(--ff-prm);
+    font-size: var(--fs-lead);
+    font-weight: var(--fw-med);
+    line-height: normal;
+}

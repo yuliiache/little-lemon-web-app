@@ -1,6 +1,7 @@
 import {useState} from "react";
 import PersonalDetails from "../Components/PersonalDetailsForm"
 import ChooseTable from "../Components/ChooseTableForm";
+import Button from "../Components/Button";
 
 function Reservation() {
     const [chooseTable, setChooseTable] = useState({
@@ -8,7 +9,7 @@ function Reservation() {
         time: '',
         guests: 1,
         occasion: '',
-        selectedLocation: null,
+        selectedLocation: '',
     })
     const [personalDetails, setPersonalDetails] = useState({
         name: '',
@@ -32,23 +33,30 @@ function Reservation() {
         }
     }
 
+    const handleLocationChange = (property, value) => {
+        setChooseTable(prevState => ({
+            ...prevState,
+            [property]: value
+        }))
+    }
+
     const handleTableChange = (e) => {
         setChooseTable( prevState => ({
             ...prevState,
-            [e.target.id]: e.target.value,
+            [e.target.name]: e.target.value,
         }));
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(chooseTable.occasion)
+        alert(chooseTable.selectedLocation)
 
         setChooseTable({
             date: '',
             time: '',
             guests: 1,
             occasion: '',
-            selectedLocation: null,
+            selectedLocation: '',
         });
         setPersonalDetails({
             name: '',
@@ -60,14 +68,28 @@ function Reservation() {
     };
 
     return (
-        <main className="main">
+        <main className='main'>
             <form onSubmit={handleSubmit}>
-                <ChooseTable
-                    chooseTable={chooseTable} handleTableChange={handleTableChange}
-                />
-                <PersonalDetails personalDetails={personalDetails} handlePersonalChange={handlePersonalChange}/>
-                <button disabled={!personalDetails.name} type='submit'>Submit</button>
-
+                <div className='form-background-top'></div>
+                <div className='form-top'>
+                    <ChooseTable
+                        chooseTable={chooseTable}
+                        handleTableChange={handleTableChange}
+                        handleLocationChange={handleLocationChange}
+                    />
+                </div>
+                <div className='form-bottom'>
+                    <PersonalDetails
+                        personalDetails={personalDetails}
+                        handlePersonalChange={handlePersonalChange}/>
+                    <Button
+                        disabled={!personalDetails.name}
+                        type='submit'
+                    >
+                        Submit
+                    </Button>
+                </div>
+                <div className='form-background-bottom'></div>
             </form>
         </main>
     )

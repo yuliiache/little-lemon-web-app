@@ -7,6 +7,7 @@ import owners from "../assets/images/owners-about.jpg"
 import decoLine from "../assets/images/deco-line-about.png"
 import restaurantInside from "../assets/images/restaurant-inside.jpg"
 import React, { useState, useEffect } from "react";
+import Button from "../Components/Button";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -45,7 +46,7 @@ function Home() {
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
-                    <button>Reserve a table</button>
+                    <Button>Reserve a table</Button>
                 </div>
                 <div className='hero-image'>
                     <img
@@ -56,7 +57,7 @@ function Home() {
             <section className='specials'>
                 <div className='specials-header'>
                     <h1>Specials</h1>
-                    <button>Online Menu</button>
+                    <Button>Online Menu</Button>
                 </div>
                 <div className='specials-holder'>
                     {isLargeDevice ? (
@@ -107,18 +108,15 @@ function Home() {
                 <div className='about-content'>
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
-
                     <p>Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant.<br />
                         <br/>
                         The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12-15 items that they rotate seasonally.<br />
                         <br/>
                         The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
-                    <div className='v-line'></div>
-                    <div className='h-line'></div>
-                        {/*<img*/}
-                    {/*    src={decoLine}*/}
-                    {/*    alt='decorative yellow line'*/}
-                    {/*/>*/}
+                        <img
+                        src={decoLine}
+                        alt='decorative yellow line'
+                    />
 
 
                 </div>
