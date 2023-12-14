@@ -32,12 +32,15 @@
     font-family: var(--ff-prm);
     font-size: var(--fs-section-title);
     font-weight: var(--fw-exbold);
-    margin-top: 26px;
     cursor: pointer;
 }
 
 .button:active {
     background-color: var(--accent-clr);
+    color: var(--background-clr);
+}
+.button:disabled {
+    background-color: grey;
     color: var(--background-clr);
 }
 
@@ -224,6 +227,9 @@
     font-weight: var(--fw-med);
     max-width: 250px;
     margin-top: 9px;
+}
+.hero button {
+    margin-top: 26px;
 }
 
 .hero-image {
@@ -746,9 +752,9 @@
 }
 
 .form-top {
-    grid-column: 3 / 11;
+    grid-column: 2 / 12;
     grid-row: 1;
-    margin: 40px auto 70px auto;
+    place-items: center;
 }
 
 .form-background-bottom {
@@ -759,23 +765,38 @@
 }
 
 .form-bottom {
-    grid-column: 3 / 11;
+    grid-column: 2 / 12;
     grid-row: 2;
-    margin: 40px auto 185px auto;
+    place-items: center;
 }
 
 .main form h1 {
     font-family: var(--ff-sec);
     font-size: var(--fs-title);
     font-weight: var(--fw-med);
+    line-height: normal;
+    margin: 40px auto 20px;
+}
+
+.choose-table:not(button) {
+    display: grid;
+    justify-content: center;
 }
 
 .choose-table h1 {
     color: var(--secondary-clr);
+    margin-bottom: 35px;
+}
+
+.choose-table > div {
+    display: flex;
+    width: 100%;
 }
 
 .personal-details {
     color: var(--dark-clr);
+    display: grid;
+    justify-content: center;
 }
 
 .main form label:not(:last-child) {
@@ -783,10 +804,123 @@
     font-family: var(--ff-sec);
     font-size: var(--fs-subtitle);
     font-weight: var(--fw-reg);
+    line-height: normal;
+    display: inline-block;
+    margin-top: 15px;
 }
+
+.choose-table label {
+    color: var(--light-clr);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    display: block;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 0 -34px;
+}
+
+.main .booking-guests select{
+    width: 346px;
+}
+
+.booking-location {
+    margin: 45px 0;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.main form input:not([type='checkbox']),
+.main form select {
+    border-radius: var(--br);
+    font-family: var(--ff-sec);
+    font-size: var(--fs-subtitle);
+    font-weight: var(--fw-reg);
+    line-height: normal;
+    color: var(--dark-clr);
+}
+
+.choose-table input,
+.choose-table select {
+    text-align: center;
+}
+
+.personal-details input {
+    padding-left: 40px;
+}
+
+.personal-comment textarea {
+    width: 470px;
+    max-height: 250px;
+    border-radius: var(--br);
+    font-family: var(--ff-sec);
+    font-size: var(--fs-section-title);
+    font-weight: var(--fw-reg);
+    line-height: normal;
+    color: var(--dark-clr);
+    padding: 10px 10px;
+}
+
+.personal-comment p {
+    display: grid;
+    justify-content: end;
+    font-family: var(--ff-prm);
+    font-size: var(--fs-paragraph);
+    font-weight: var(--fw-med);
+    line-height: normal;
+}
+
+.terms {
+    margin-top: 40px;
+}
+
+.terms input {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    accent-color: var(--background-clr);
+    color: var(--dark-clr);
+    border: white;
+}
+
 .terms label {
     font-family: var(--ff-prm);
     font-size: var(--fs-lead);
     font-weight: var(--fw-med);
     line-height: normal;
+}
+
+.submit-button {
+    display: grid;
+    justify-content: center;
+    margin: 145px 0 185px;
+}
+
+.personal-name,
+.personal-email,
+.personal-phone {
+    display: flex;
+    align-items: baseline;
+}
+
+.personal-details div > label + p {
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    .main form input:not([type='checkbox']),
+    .main form select {
+        width: 470px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main form input:not([type='checkbox']),
+    .main form select {
+        width: calc(100% - 40px);
+        /*height: calc(100% - 10px);*/
+    }
 }

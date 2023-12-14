@@ -82,12 +82,14 @@ function Reservation() {
                     <PersonalDetails
                         personalDetails={personalDetails}
                         handlePersonalChange={handlePersonalChange}/>
-                    <Button
-                        disabled={!personalDetails.name}
-                        type='submit'
-                    >
-                        Submit
-                    </Button>
+                    <div className='submit-button'>
+                        <Button
+                            disabled={!personalDetails.name || !personalDetails.email || !personalDetails.phone}
+                            type='submit'
+                        >
+                            Submit
+                        </Button>
+                    </div>
                 </div>
                 <div className='form-background-bottom'></div>
             </form>

@@ -1,9 +1,9 @@
 import {useState} from "react";
 import Button from "./Button";
-import { IoCalendarClearOutline } from "react-icons/io5";
-import { LuClock4 } from "react-icons/lu";
-import { BiChevronDownCircle, BiChevronUpCircle } from "react-icons/bi";
-import { LiaGlassCheersSolid } from "react-icons/lia";
+// import { IoCalendarClearOutline } from "react-icons/io5";
+// import { LuClock4 } from "react-icons/lu";
+// import { BiChevronDownCircle, BiChevronUpCircle } from "react-icons/bi";
+// import { LiaGlassCheersSolid } from "react-icons/lia";
 
 
 function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) {
@@ -11,16 +11,16 @@ function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) 
     const[availableTime, setAvailableTime] = useState([
         '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
     ])
-    const[isOpen, setIsOpen] = useState(false);
+    // const[isOpen, setIsOpen] = useState(false);
 
     return (
         <div className='choose-table'>
             <h1>
                 Choose your table
             </h1>
-            <div>
-                <label htmlFor='date'>Date</label>
-                <IoCalendarClearOutline />
+            <label htmlFor='date'>Date</label>
+            <div className='booking-date'>
+                {/*<IoCalendarClearOutline />*/}
                 <input
                     type='date'
                     name='date'
@@ -29,16 +29,19 @@ function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) 
                     onChange={handleTableChange}
                 />
             </div>
-            <div onClick={() => setIsOpen(!isOpen)}>
-                <label htmlFor='time'>Time</label>
-                <LuClock4 />
+
+            <label htmlFor='time'>Time</label>
+            <div
+                // onClick={() => setIsOpen(!isOpen)}
+                >
+                {/*<LuClock4 />*/}
                 <select
                     id='time'
                     name='time'
                     value={chooseTable.time}
                     onChange={(e) => {
                         handleTableChange(e);
-                        setIsOpen(!isOpen)
+                        // setIsOpen(!isOpen)
                     }}
                 >
                     {availableTime.map((time, index) => (
@@ -47,17 +50,19 @@ function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) 
                         </option>
                     ))}
                 </select>
-                {isOpen ? <BiChevronUpCircle/> : <BiChevronDownCircle />}
+                {/*{isOpen ? <BiChevronUpCircle/> : <BiChevronDownCircle />}*/}
             </div>
-            <div onClick={() => setIsOpen(!isOpen)}>
-                <label htmlFor='guests'>Number of guests</label>
+            <label htmlFor='guests'>Number of guests</label>
+            <div className='booking-guests'
+                // onClick={() => setIsOpen(!isOpen)}
+            >
                 <select
                     id='guests'
                     name='guests'
                     value={chooseTable.guests}
                     onChange={(e) => {
                         handleTableChange(e);
-                        setIsOpen(!isOpen)
+                        // setIsOpen(!isOpen)
                     }}
                 >
                     <option>1</option>
@@ -72,18 +77,20 @@ function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) 
                     <option>10</option>
 
                 </select>
-                {isOpen ? <BiChevronUpCircle/> : <BiChevronDownCircle />}
+                {/*{isOpen ? <BiChevronUpCircle/> : <BiChevronDownCircle />}*/}
             </div>
-            <div onClick={() => setIsOpen(!isOpen)}>
-                <label htmlFor='occasion'>Occasions</label>
-                <LiaGlassCheersSolid />
+            <label htmlFor='occasion'>Occasions</label>
+            <div
+                // onClick={() => setIsOpen(!isOpen)}
+            >
+                {/*<LiaGlassCheersSolid />*/}
                 <select
                     id='occasion'
                     name='occasion'
                     value={chooseTable.occasion}
                     onChange={(e) => {
                         handleTableChange(e);
-                        setIsOpen(!isOpen)
+                        // setIsOpen(!isOpen)
                     }}
                 >
                     <option>Occasion</option>
@@ -91,13 +98,14 @@ function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) 
                     <option>Engagement</option>
                     <option>Anniversary</option>
                 </select>
-                {isOpen ? <BiChevronUpCircle/> : <BiChevronDownCircle />}
+                {/*{isOpen ? <BiChevronUpCircle/> : <BiChevronDownCircle />}*/}
             </div>
-            <div>
-                <h2>Where</h2>
+            <div className='booking-location'>
+                <label htmlFor='location'>Where</label>
                 <Button
                     className='choose-table'
                     name='location'
+                    id='location'
                     value={chooseTable.selectedLocation}
                     onClick={() => handleLocationChange('selectedLocation', 'inside')}
                     active={chooseTable.selectedLocation === 'inside'}

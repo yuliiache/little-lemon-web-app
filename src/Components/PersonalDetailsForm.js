@@ -7,20 +7,26 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
             <h1>
                 Personal details
             </h1>
-            <div>
+            <div className='personal-name'>
                 <label htmlFor='name'>Full name</label>
-                <input
-                    id='name'
-                    type='text'
-                    placeholder='Name'
-                    name='name'
-                    autoComplete='name'
-                    value={personalDetails.name}
-                    onChange={handlePersonalChange}
-                />
+                <p>*Required</p>
             </div>
             <div>
+                <input
+                id='name'
+                type='text'
+                placeholder='Name'
+                name='name'
+                autoComplete='name'
+                value={personalDetails.name}
+                onChange={handlePersonalChange}
+            />
+            </div>
+            <div className='personal-email'>
                 <label htmlFor='email'>Email</label>
+                <p>*Required</p>
+            </div>
+            <div>
                 <input
                     id='email'
                     type='email'
@@ -31,9 +37,11 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                     onChange={handlePersonalChange}
                 />
             </div>
-            <div>
+            <div className='personal-phone'>
                 <label htmlFor='phone'>Contact Number</label>
-                <p>+1</p>
+                <p>*Required</p>
+            </div>
+            <div>
                 <input
                     id='phone'
                     type='tel'
@@ -44,13 +52,13 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                     onChange={handlePersonalChange}
                 />
             </div>
-            <div>
-                <label htmlFor='comment'>Comment</label>
+            <label htmlFor='comment'>Comment</label>
+            <div className='personal-comment'>
                 <textarea
                     id='comment'
                     placeholder='Anything else about your booking?'
                     name='comment'
-                    rows='5'
+                    rows='10'
                     maxLength='200'
                     value={personalDetails.comment}
                     onChange={handlePersonalChange}
@@ -66,9 +74,6 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                     onChange={handlePersonalChange}
                 />
                 <label htmlFor="terms">I agree to the Terms & Conditions</label>
-            </div>
-            <div>
-
             </div>
         </div>
     )
