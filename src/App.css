@@ -788,8 +788,9 @@
     margin-bottom: 35px;
 }
 
-.choose-table > div {
+.choose-table > div:not(:last-child) {
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -827,6 +828,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .booking-location {
+    display: flex;
     margin: 45px 0;
     align-items: baseline;
     justify-content: space-between;
@@ -896,6 +898,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: grid;
     justify-content: center;
     margin: 145px 0 185px;
+}
+
+.error-message {
+    font-size: var(--fs-paragraph);
+    color: var(--accent-clr);
+    font-weight: var(--fw-med);
+}
+
+.choose-table .error-message {
+
 }
 
 .personal-name,

@@ -1,4 +1,3 @@
-import {useState} from "react";
 import Button from "./Button";
 // import { IoCalendarClearOutline } from "react-icons/io5";
 // import { LuClock4 } from "react-icons/lu";
@@ -6,11 +5,8 @@ import Button from "./Button";
 // import { LiaGlassCheersSolid } from "react-icons/lia";
 
 
-function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) {
+function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange, errorDate, availableTime, updateTime }) {
 
-    const[availableTime, setAvailableTime] = useState([
-        '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-    ])
     // const[isOpen, setIsOpen] = useState(false);
 
     return (
@@ -28,6 +24,7 @@ function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange }) 
                     value={chooseTable.date}
                     onChange={handleTableChange}
                 />
+                {errorDate && <p className='error-message'>{errorDate}</p>}
             </div>
 
             <label htmlFor='time'>Time</label>

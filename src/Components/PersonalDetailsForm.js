@@ -1,6 +1,6 @@
 
 
-function PersonalDetails({ personalDetails, handlePersonalChange }) {
+function PersonalDetails({ personalDetails, handlePersonalChange, errorName, errorEmail, errorPhone }) {
     return (
 
         <div className='personal-details'>
@@ -21,6 +21,7 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                 value={personalDetails.name}
                 onChange={handlePersonalChange}
             />
+                {errorName && <p className='error-message'>{errorName}</p>}
             </div>
             <div className='personal-email'>
                 <label htmlFor='email'>Email</label>
@@ -36,6 +37,7 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                     value={personalDetails.email}
                     onChange={handlePersonalChange}
                 />
+                {errorEmail && <p className='error-message'>{errorEmail}</p>}
             </div>
             <div className='personal-phone'>
                 <label htmlFor='phone'>Contact Number</label>
@@ -51,6 +53,7 @@ function PersonalDetails({ personalDetails, handlePersonalChange }) {
                     value={personalDetails.phone}
                     onChange={handlePersonalChange}
                 />
+                {errorPhone && <p className='error-message'>{errorPhone}</p>}
             </div>
             <label htmlFor='comment'>Comment</label>
             <div className='personal-comment'>
