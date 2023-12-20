@@ -1,20 +1,34 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import BookingForm from "./Pages/BookingForm";
 import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import Nav from "./Components/Nav";
 import BookingConfirmation from "./Pages/Confirmation";
 import './App.css';
-import {useState} from "react";
+import {useReducer} from "react";
 
 function App() {
-    const[availableTime, setAvailableTime] = useState([
-        '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-    ])
+    const updateTime = ( times, action ) => {
+        switch (action.type) {
+            case 'reserved': {
+                return times.filter((t) => {
+                    let actionTimeStr = typeof action.time === 'number' ? action.time.toString() : action.time;
 
-    const updateTime = () => {
-        setAvailableTime()
-    }
+                    return t !== actionTimeStr
+                })
+            }
+            default: {
+                throw Error('Unknown action: ' + action.type);
+            }
+        }
+    };
+
+    const initializeTime = () => {
+        return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+    };
+
+    const [availableTime, dispatch] = useReducer(updateTime, initializeTime());
+
 
     return (
 
@@ -26,7 +40,7 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/reservation" element={<BookingForm
                         availableTime={availableTime}
-                        updateTimes={updateTime}
+                        dispatch={dispatch}
                     />}/>
                     <Route path="/confirmation" element={<BookingConfirmation/>}/>
                 </Routes>
@@ -35,5 +49,6 @@ function App() {
         </div>
     );
 }
+
 
 export default App;

@@ -3,7 +3,7 @@ import PersonalDetails from "../Components/PersonalDetailsForm"
 import ChooseTable from "../Components/ChooseTableForm";
 import Button from "../Components/Button";
 
-function BookingForm({ availableTime, updateTime}) {
+function BookingForm({ availableTime, dispatch}) {
     const [chooseTable, setChooseTable] = useState({
         date: '',
         time: '',
@@ -127,7 +127,10 @@ function BookingForm({ availableTime, updateTime}) {
         }));
     }
 
+    console.log(chooseTable.time)
     const handleSubmit = (e) => {
+        let time = chooseTable.time
+        dispatch({type: 'reserved', time: time});
         e.preventDefault();
         setChooseTable({
             date: '',
@@ -156,7 +159,6 @@ function BookingForm({ availableTime, updateTime}) {
                         handleLocationChange={handleLocationChange}
                         errorDate={error.date}
                         availableTime={availableTime}
-                        updateTime={updateTime}
                     />
                 </div>
                 <div className='form-bottom'>

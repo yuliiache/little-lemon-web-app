@@ -5,7 +5,7 @@ import Button from "./Button";
 // import { LiaGlassCheersSolid } from "react-icons/lia";
 
 
-function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange, errorDate, availableTime, updateTime }) {
+function ChooseTable ({ chooseTable, handleTableChange, handleLocationChange, errorDate, availableTime }) {
 
     // const[isOpen, setIsOpen] = useState(false);
 
