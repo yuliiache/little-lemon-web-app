@@ -7,25 +7,26 @@ import BookingConfirmation from "./Pages/Confirmation";
 import './App.css';
 import {useReducer} from "react";
 
-function App() {
-    const updateTime = ( times, action ) => {
-        switch (action.type) {
-            case 'reserved': {
-                return times.filter((t) => {
-                    let actionTimeStr = typeof action.time === 'number' ? action.time.toString() : action.time;
+export const initializeTime = () => {
+    return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+};
 
-                    return t !== actionTimeStr
-                })
-            }
-            default: {
-                throw Error('Unknown action: ' + action.type);
-            }
+export const updateTime = ( times, action ) => {
+    switch (action.type) {
+        case 'reserved': {
+            return times.filter((t) => {
+                let actionTimeStr = typeof action.time === 'number' ? action.time.toString() : action.time;
+
+                return t !== actionTimeStr
+            })
         }
-    };
+        default: {
+            throw Error('Unknown action: ' + action.type);
+        }
+    }
+};
 
-    const initializeTime = () => {
-        return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-    };
+function App() {
 
     const [availableTime, dispatch] = useReducer(updateTime, initializeTime());
 
